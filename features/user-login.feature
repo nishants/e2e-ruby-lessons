@@ -1,7 +1,7 @@
-@functional
+@functional @login
 Feature: Login as zinc user
 
-  @hello
+  @admin
   Scenario: Login as zinc admin
     Given I open zinc homepage
     Then  I click on login
