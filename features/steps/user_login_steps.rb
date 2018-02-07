@@ -1,14 +1,3 @@
-Then(/^I see "([^"]*)" in search results$/) do |arg|
-  @browser.element(:text => 'www.zinclearninglabs.com')
-end
-
-
-Then(/^I see "([^"]*)" as first search result$/) do |expected|
-  search_results = @browser.elements(:tag_name => 'cite')
-  first_result = search_results[0].text
-  expect(first_result).to eq(expected)
-end
-
 Given(/^I open zinc homepage$/) do
   @browser.goto "http://staging.zinclearninglabs.com/"
 end
