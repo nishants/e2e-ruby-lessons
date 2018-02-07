@@ -1,0 +1,4 @@
+.idea/
+rubycumwatir.iml
+reports/*.html
+config/drivers/chromedriver

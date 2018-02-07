@@ -1,0 +1,32 @@
+urls :
+  default : http://staging.zinclearninglabs.com/
+
+data :
+  default : config/data
+  mobile  : config/data
+
+page_dir:
+  default : ./lib/pages/desktop
+  mobile  : ./lib/pages/mobile
+
+users :
+  default : config/users.yml
+
+db:
+  host     : localhost
+  port     : 5432
+  username : dawn
+  database : learninglabs_development
+  password : 12345
+  dump_file: config/db/dump.sql
+
+clients :
+  default:
+      browser: chrome
+  firefox:
+      browser: firefox
+  ie:
+      browser: ie
+  iphone5:
+    browser: chrome
+    device : Apple iPhone 5
