@@ -1,9 +1,11 @@
 class HomePage < Page
+  page_url base_url
 
-  page_url login_url
-  link(:open_login_page, :text =>  "Login")
+  def click_login
+    @browser.element(:text => 'Login').click
+  end
 
-  def open_login
-    open_login_page
+  def site_admin_link_visible?
+    @browser.element(:text => '(Site Admin)').visible?
   end
 end
