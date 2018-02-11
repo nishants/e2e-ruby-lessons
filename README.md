@@ -11,7 +11,7 @@
 9. User data with @users
 10. Testing a listing page
 11. Preparing test data
-12. Running tests against Rails server on Semaphore
+12. Semaphore Configuration
 13. Cross browser Testing
 
 
@@ -145,6 +145,13 @@ rake
 | set default wait time       | @browser.driver.manage.timeouts.implicit_wait = 3 #in seconds |
 | wait for condition          | Watir::Wait.until { @browser.element(:id => 'msg').text.include? 'Thank you' } |
 |                             |                                                              |
+
+# Semaphore Configuration
+
+- Run a rails server as daemon
+- cd into e2e and run tests
+
+![Semaphore Build](https://github.com/nishants/zinc-test-lessons/raw/master/docs/images/semaphore-build.png)
 
 
 
