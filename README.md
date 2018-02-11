@@ -8,27 +8,12 @@
 
 Webdriver + Watir
 
-| Open URL                   | ```@browser.goto "http://my/url"```                   |
-| -------------------------- | :---------------------------------------------------- |
-| **Find by text and click** | ```@browser.element(:text => 'text-to-find').click``` |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
-|                            |                                                       |
+| What                        | Example                                                  |
+| :-------------------------- | -------------------------------------------------------- |
+| Find by text and click      | @browser.element(:text => 'text-to-find').click          |
+| Check if element is visible | @browser.element(:text => 'text-to-find').click.visible? |
+| Enter value in text field   | @browser.text_field(:id => 'my-input').set('my value')   |
+| Open URL                    | @browser.goto "http://my/url"                            |
 
 
 
