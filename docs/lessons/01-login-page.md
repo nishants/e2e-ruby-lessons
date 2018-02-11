@@ -92,7 +92,7 @@ end
 
 
 
-Lets refer the cheatsheet here to figure out how to open the URL : 
+Using the [cheatsheet here](https://github.com/nishants/zinc-test-lessons/blob/master/docs/cheat-sheet.md#cheatsheet) lets open the staging URL in this step: 
 
 ```ruby
 Given(/^I open zinc homepage$/) do
@@ -104,7 +104,7 @@ Then(/^I click on login$/) do
 end
 ```
 
-In above code, we ask the cucumber to sleep for 5 seconds before
+In above code, we ask the cucumber to sleep for 5 seconds in the next step. 
 
 Now lets run the tests again to see what happens
 
@@ -114,4 +114,57 @@ rake tags=@admin
 
 You should see the homepage opened up for 5 seconds.  
 
-Next we need to click on the login link in the page, lets again quickly refer the cheatshee : 
+Next we need to click on the login link in the page, lets again quickly [refer the cheatsheet :](https://github.com/nishants/zinc-test-lessons/blob/master/docs/cheat-sheet.md#cheatsheet) 
+
+```ruby
+Given(/^I open zinc homepage$/) do
+  @browser.goto("http://staging.zinclearninglabs.com/")
+end
+
+Then(/^I click on login$/) do
+  @browser.element(:text => 'Login').click
+end
+
+And(/^I enter username and password for admin user$/) do
+  sleep 5
+end
+```
+
+
+
+Now running the tests again, you should be able to see the homepage openeing up, login button being clicked and then login form showing up for 5 seconds.
+
+Next we need to enter the username and password for an admin user, again lets [refer the cheatsheet :](https://github.com/nishants/zinc-test-lessons/blob/master/docs/cheat-sheet.md#cheatsheet) 
+
+Following snippet will find an element on page with id "user_email" and set the value .
+
+```ruby
+  @browser.text_field(:id => 'user_email').set('karthik.cs@gmail.com')
+```
+
+Similarity we need to enter a password and then click on the login button as follows: 
+
+```ruby
+And(/^I enter username and password for admin user$/) do
+  @browser.text_field(:id => 'user_email').set('karthik.cs@gmail.com')
+  @browser.text_field(:id => 'user_password').set('password')
+  @browser.button(:text => 'Sign in').click
+end
+
+Then(/^I see homepage with site admin link in top bar$/) do
+  sleep 5
+end
+```
+
+On running the test again you will see the webdriver opening the homepage, clicking on login, entering username and password and clicking on login button to end up on the homepage with logged in user.
+
+Now, lets verify if the logged in homepage has a site admin link : 
+
+```ruby
+Then(/^I see homepage with site admin link in top bar$/) do
+  site_admin_link = @browser.element(:text => '(Site Admin)')
+  expect(site_admin_link.visible?).to eq(true)
+end
+```
+
+Lets run our test again. We should see following output : 
