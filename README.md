@@ -1,8 +1,8 @@
 # Contents
 
-1. [Setup](Install chrome webdriver from)
-2. [Gherkin](Gherkin is a language like **plain English**)
-3. [Cucumber](Cucumber executes your )
+1. [Setup](#Setup)
+2. [Gherkin](#Gherkin)
+3. [Cucumber](#Cucumber)
 4. Webdriver
 5. Watir
 6. Cheatsheet
@@ -13,6 +13,18 @@
 11. Preparing test data
 12. Running tests against Rails server on Semaphore
 13. Cross browser Testing
+
+
+
+# Setup
+
+- Install chrome webdriver from https://sites.google.com/a/chromium.org/chromedriver/getting-started
+- Install gems and run
+
+```bash
+bundle install
+rake
+```
 
 
 
@@ -86,19 +98,6 @@ Then(/^I see homepage with site admin link in top bar$/) do
   site_admin_link = @browser.element(:text => '(Site Admin)')
   expect(site_admin_link.visible?).to eq(true)
 end
-```
-
-
-
-# Setup
-
-- Install chrome webdriver from https://sites.google.com/a/chromium.org/chromedriver/getting-started
-- Install gems and run
-
-
-```bash
-bundle install
-rake
 ```
 
 
