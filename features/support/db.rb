@@ -19,7 +19,7 @@ class Database
   end
 
   def dump(path)
-    system "pg_dump --format=tar #{@db_params} > #{path}"
+    system "pg_dump -f #{@db_params} > #{path}"
   end
 
 end
