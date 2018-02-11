@@ -1,4 +1,4 @@
-@functional @login
+@users @functional
 Feature: Login as zinc user
 
   @admin
