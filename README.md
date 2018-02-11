@@ -6,14 +6,29 @@
 
 # Cheatsheet 
 
-Webdriver + Watir
+### - Interacting with page elements
 
-| What                        | Example                                                  |
-| :-------------------------- | -------------------------------------------------------- |
-| Find by text and click      | @browser.element(:text => 'text-to-find').click          |
-| Check if element is visible | @browser.element(:text => 'text-to-find').click.visible? |
-| Enter value in text field   | @browser.text_field(:id => 'my-input').set('my value')   |
-| Open URL                    | @browser.goto "http://my/url"                            |
+| What                        | Example                                                      |
+| :-------------------------- | ------------------------------------------------------------ |
+| Find by text and click      | @browser.element(:text => 'text-to-find').click              |
+| Check if element is visible | @browser.element(:text => 'text-to-find').visible?           |
+| Enter value in text field   | @browser.text_field(:id => 'my-input').set('my value')       |
+| Open URL                    | @browser.goto "http://my/url"                                |
+| Select a value              | @browser.select_list(:id => 'language').select 'English'     |
+| All select options          | @browser.select_list(:id => 'language').selected_options     |
+| Radio button                | @browser.radio(:value => 'Optional').set                     |
+| Radio button value          | @browser.radio(:value => 'Optional').set?                    |
+| Checkbox                    | @browser.checkbox(:value => 'Optional').set                  |
+| Checkbox value              | @browser.checkbox(:value => 'Optional').set?                 |
+| Alert click 'Ok'            | @browser.alert.ok                                            |
+| Alert click 'Close'         | @browser.alert.close                                         |
+| Get alert text              | @browser.alert.text                                          |
+| Is alert shown              | @browser.alert.exists?                                       |
+| Wait for element            | @browser.element(:text => 'Submit').wait_until_present       |
+| Wait till element present   | @browser.element(:text => 'Loading').wait_while_present      |
+| Set default wait time       | @browser.driver.manage.timeouts.implicit_wait = 3 #in seconds |
+|                             |                                                              |
+|                             |                                                              |
 
 
 
