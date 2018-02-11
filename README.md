@@ -1,11 +1,11 @@
 # Contents
 
-1. [Setup](#setup)
-2. [Gherkin](#gherkin)
-3. [Cucumber](#cucumber)
-4. [Webdriver](#webdriver)
-5. Watir
-6. Cheatsheet
+1. [Gherkin](#gherkin)
+2. [Cucumber](#cucumber)
+3. [Webdriver](#webdriver)
+4. [Watir](#watir)
+5. [Setup](#setup)
+6. [Cheatsheet](#cheatsheet)
 7. Creating simple test
 8. Using Page objects
 9. User data with @users
@@ -13,18 +13,6 @@
 11. Preparing test data
 12. Running tests against Rails server on Semaphore
 13. Cross browser Testing
-
-
-
-# Setup
-
-- Install chrome webdriver from https://sites.google.com/a/chromium.org/chromedriver/getting-started
-- Install gems and run
-
-```bash
-bundle install
-rake
-```
 
 
 
@@ -115,6 +103,18 @@ Selenium WebDriver accepts commands (sent in Selenese, or via a Client API) and 
 Refer: http://watir.com/
 
 Watir is a pragrammer friendly ruby interface to Selenium Webdriver API. It provides more readable and concise code for interacting with elements on a webpage, while using Webdriver beneath the surface.
+
+
+
+# Setup
+
+- Install chrome webdriver from https://sites.google.com/a/chromium.org/chromedriver/getting-started
+- Install gems and run
+
+```bash
+bundle install
+rake
+```
 
 
 
