@@ -1,9 +1,9 @@
 # Contents
 
-1. [Setup](#Setup)
-2. [Gherkin](#Gherkin)
-3. [Cucumber](#Cucumber)
-4. Webdriver
+1. [Setup](#setup)
+2. [Gherkin](#gherkin)
+3. [Cucumber](#cucumber)
+4. [Webdriver](#webdriver)
 5. Watir
 6. Cheatsheet
 7. Creating simple test
@@ -99,6 +99,22 @@ Then(/^I see homepage with site admin link in top bar$/) do
   expect(site_admin_link.visible?).to eq(true)
 end
 ```
+
+
+
+# Webdriver
+
+Refer : https://en.wikipedia.org/wiki/Selenium_(software)#Selenium_WebDriver
+
+Selenium WebDriver accepts commands (sent in Selenese, or via a Client API) and sends them to a browser. This is implemented through a browser-specific browser driver, which sends commands to a browser, and retrieves results. Most browser drivers actually launch and access a browser application (such as [Firefox](https://en.wikipedia.org/wiki/Firefox), [Chrome](https://en.wikipedia.org/wiki/Google_Chrome), [Internet Explorer](https://en.wikipedia.org/wiki/Internet_Explorer), or [Microsoft Edge](https://en.wikipedia.org/wiki/Microsoft_Edge))
+
+
+
+# Watir 
+
+Refer: http://watir.com/
+
+Watir is a pragrammer friendly ruby interface to Selenium Webdriver API. It provides more readable and concise code for interacting with elements on a webpage, while using Webdriver beneath the surface.
 
 
 
