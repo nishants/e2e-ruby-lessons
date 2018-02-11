@@ -1,12 +1,113 @@
+# Contents
+
+1. [Setup](Install chrome webdriver from)
+2. [Gherkin](Gherkin is a language like **plain English**)
+3. [Cucumber](Cucumber executes your )
+4. Webdriver
+5. Watir
+6. Cheatsheet
+7. Creating simple test
+8. Using Page objects
+9. User data with @users
+10. Testing a listing page
+11. Preparing test data
+12. Running tests against Rails server on Semaphore
+13. Cross browser Testing
+
+
+
+# Gherkin
+
+Gherkin is a language like **plain English** used to specify features of a system.
+
+Gherkin serves two purposes — **documentation and automated tests**. 
+
+Gherking allows **creating tests in collboration with non-technical stakeholders** in product (product owners, business team, manual testers).
+
+**Example** : 
+
+```yaml
+@users @functional
+Feature: Login as zinc user
+
+  @admin
+  Scenario: Login as zinc admin
+    Given I open zinc homepage
+    Then  I click on login
+    And   I enter username and password for admin user
+    Then  I see homepage with site admin link in top bar
+```
+
+In Gherkin, each line that isn't blank has to start with a Gherkin *keyword*, followed by any text you like. The main keywords are:
+
+- `Feature`
+- `Scenario`
+- `Given`, `When`, `Then`, `And`, `But` (Steps)
+- `Background`
+- `Scenario Outline`
+- `Examples`
+
+There are a few extra keywords as well:
+
+- `"""` (Doc Strings)
+- `|` (Data Tables)
+- `@` (Tags)
+- `#` (Comments)
+
+
+
+# Cucumber
+
+Cucumber executes your `.feature` files, and those files contain executable specifications written in a language called Gherkin.
+
+It maps each line from the gherkin file to a step written in ruby. This allows us to automate the specification written in gherking language using ruby (or any other language).
+
+
+
+Example of above gherking file implementation with cucumber : 
+
+```ruby
+Given(/^I open zinc homepage$/) do
+  @browser.goto "http://staging.zinclearninglabs.com/"
+end
+
+
+Then(/^I click on login$/) do
+  @browser.element(:text => 'Login').click
+end
+
+And(/^I enter username and password for admin user$/) do
+  @browser.text_field(:id => 'user_email').set('karthik.cs@gmail.com')
+  @browser.text_field(:id => 'user_password').set('password')
+  @browser.button(:text => 'Sign in').click
+end
+
+Then(/^I see homepage with site admin link in top bar$/) do
+  site_admin_link = @browser.element(:text => '(Site Admin)')
+  expect(site_admin_link.visible?).to eq(true)
+end
+```
+
+
+
 # Setup
-- Install webdriver on path
-- Run a bundle install
+
+- Install chrome webdriver from https://sites.google.com/a/chromium.org/chromedriver/getting-started
+- Install gems and run
+
+
+```bash
+bundle install
+rake
+```
 
 
 
 # Cheatsheet 
 
-### - Interacting with page elements
+### Interacting with page elements
+
+<u>Refer :  http://watir.com/guides/</u> 
 
 | What                        | Example                                                      |
 | :-------------------------- | ------------------------------------------------------------ |
@@ -35,7 +136,7 @@
 # Runtime Options
 
 ```bash
-rake command [env=<env-name> | device=<device-name> | pages=<path/to/pages> | data_suite=<name> | url=<url> | report_file=<path> | client=<device&browser> | users=<profiles-name> | ]
+rake [env=<env-name> | tags=<@tag1,@tag2> | device=<device-name> | pages=<path/to/pages> | data_suite=<name> | url=<url> | report_file=<path> | client=<device&browser> | users=<profiles-name> | ]
 ```
 
 ##### Examples
