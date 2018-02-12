@@ -5,7 +5,7 @@
 3. [Webdriver](#webdriver)
 4. [Watir](#watir)
 5. [Setup](#setup)
-6. [Cheatsheet](#cheatsheet)
+6. [Cheatsheet](https://github.com/nishants/zinc-test-lessons/blob/master/docs/cheat-sheet.md#cheatsheet)
 7. [Creating simple test](https://github.com/nishants/zinc-test-lessons/blob/master/docs/lessons/01-login-page.md#lesson-01--automating-login-page-for-site-admin-user)
 8. Using Page objects
 9. User data with @users
@@ -13,6 +13,8 @@
 11. Preparing test data
 12. Semaphore Configuration
 13. Cross browser Testing
+14. Runtime options
+
 
 
 
@@ -109,49 +111,70 @@ Watir is a pragrammer friendly ruby interface to Selenium Webdriver API. It prov
 # Setup
 
 - Install chrome webdriver from https://sites.google.com/a/chromium.org/chromedriver/getting-started
-- Install gems and run
+- Git clone the repository 
+- Open project directory
+- Install gems 
+- Run with rake command
 
 ```bash
+git clone https://github.com/nishants/zinc-test-lessons.git
+cd zinc-test-lessons
 bundle install
 rake
 ```
 
 
 
+# Test a Login Page
+
+[This tutorial helps you understand the basic building block of writting a tests.](https://github.com/nishants/zinc-test-lessons/blob/master/docs/lessons/01-login-page.md#lesson-01--automating-login-page-for-site-admin-user)
+
+
+
+# Using Page objects
+
+Making code maintanable by putting all web page related depdentices in page object layer.
+
+
+
+# User data with @users
+
+A DSL for organizing test data by features.
+
+
+
+# Testing a listing page
+
+Shows how to test a page that show a list of cards/table etc.
+
+
+
+# Preparing test data
+
+Load test data with rake command `db:play`, create data using UI or rails console, run `db:record` and checkin.
+
+
+
 # Cheatsheet 
 
-### Interacting with page elements
+[Find a cheatsheet for quick reference to APIs here](https://github.com/nishants/zinc-test-lessons/blob/master/docs/cheat-sheet.md#cheatsheet)
 
-<u>Refer :  http://watir.com/guides/</u> 
 
-| What                        | Example                                                      |
-| :-------------------------- | ------------------------------------------------------------ |
-| find by text and click      | @browser.element(:text => 'text-to-find').click              |
-| check if element is visible | @browser.element(:text => 'text-to-find').visible?           |
-| enter value in text field   | @browser.text_field(:id => 'my-input').set('my value')       |
-| open URL                    | @browser.goto "http://my/url"                                |
-| select a value              | @browser.select_list(:id => 'language').select 'English'     |
-| all select options          | @browser.select_list(:id => 'language').selected_options     |
-| radio button                | @browser.radio(:value => 'Optional').set                     |
-| radio button value          | @browser.radio(:value => 'Optional').set?                    |
-| checkbox                    | @browser.checkbox(:value => 'Optional').set                  |
-| checkbox value              | @browser.checkbox(:value => 'Optional').set?                 |
-| alert click 'Ok'            | @browser.alert.ok                                            |
-| alert click 'Close'         | @browser.alert.close                                         |
-| get alert text              | @browser.alert.text                                          |
-| is alert shown              | @browser.alert.exists?                                       |
-| wait for element            | @browser.element(:text => 'Submit').wait_until_present       |
-| wait till element present   | @browser.element(:text => 'Loading').wait_while_present      |
-| set default wait time       | @browser.driver.manage.timeouts.implicit_wait = 3 #in seconds |
-| wait for condition          | Watir::Wait.until { @browser.element(:id => 'msg').text.include? 'Thank you' } |
-|                             |                                                              |
 
 # Semaphore Configuration
 
-- Run a rails server as daemon
+- Run rails server as daemon
 - cd into e2e and run tests
 
 ![Semaphore Build](https://github.com/nishants/zinc-test-lessons/raw/master/docs/images/semaphore-build.png)
+
+
+
+# Cross browser Testing
+
+Watir supports all the leading browsers. The project is configured to allow selecting browser from command line (once driver for browser is added). Also the poject supports running chrome in emulator mode to test app on mobile, tablet browser screens.
+
+The app also allows implementing the pages separately for mobile, desktop and tablets. Read runtime commands for more details.
 
 
 
