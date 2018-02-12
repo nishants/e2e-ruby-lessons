@@ -85,7 +85,7 @@ Refer :  <http://watir.com/guides/>
 Create user in **config/users.yml** as : 
 
 ```yaml
-admin:
+<user-name>:
  username: <user-name>
  password: <user-password>
 ```
