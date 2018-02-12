@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gem "rspec"
 gem "rake"
 gem "cucumber"
-gem "watir-webdriver"
+gem "watir"
 gem 'fig_newton'
 gem 'page-object'
 gem 'service_mock'
