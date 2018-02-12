@@ -2,3 +2,4 @@
 rubycumwatir.iml
 reports/*.html
 config/drivers/chromedriver
+*.DS_Store
