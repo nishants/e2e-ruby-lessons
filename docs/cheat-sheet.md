@@ -98,6 +98,7 @@ username = user['username']
 password = user['password']
 ```
 
-
+### Yes You CAN !
+![Yes you can](https://github.com/nishants/zinc-test-lessons/raw/master/docs/images/yes-you-can.gif)
 
 ### 
