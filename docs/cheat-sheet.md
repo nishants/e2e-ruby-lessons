@@ -61,13 +61,6 @@ Refer :  <http://watir.com/guides/>
 
 ### **Some examples** 
 
-| What     | Example                                   |
-| -------- | ----------------------------------------- |
-| by text  | @browser.element(:text => 'text-to-find') |
-| by id    | @browser.element(:id => 'element-id')     |
-| by class | @browser.element(:class => 'element-id')  |
-| by value | @browser.element(:value => 'element-id')  |
-
 | What                            | Example                                                      |
 | ------------------------------- | ------------------------------------------------------------ |
 | find by text and click          | @browser.element(:text => 'text-to-find').click              |
@@ -89,7 +82,7 @@ Refer :  <http://watir.com/guides/>
 
 ### **Get user data**
 
-Create user in **config/users.yml **as : 
+Create user in **config/users.yml** as : 
 
 ```yaml
 admin:
