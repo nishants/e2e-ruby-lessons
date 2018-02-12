@@ -29,7 +29,7 @@ Lets write down the **steps for testing this test if manually :**
 
 
 
-**Lets define this scenario in gherkin format :** 
+**Lets define this scenario in Gherkin format :** 
 
 ```yaml
 @users @functional

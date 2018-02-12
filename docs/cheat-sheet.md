@@ -9,7 +9,7 @@ Refer :  <http://watir.com/guides/>
 | find by text and click      | @browser.element(:text => 'text-to-find').click              |
 | check if element is visible | @browser.element(:text => 'text-to-find').visible?           |
 | enter value in text field   | @browser.text_field(:id => 'my-input').set('my value')       |
-| open URL                    | @browser.goto "<http://my/url>"                              |
+| open URL                    | @browser.goto("<http://my/url>")                             |
 | select a value              | @browser.select_list(:id => 'language').select 'English'     |
 | all select options          | @browser.select_list(:id => 'language').selected_options     |
 | radio button                | @browser.radio(:value => 'Optional').set                     |

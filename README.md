@@ -60,13 +60,11 @@ There are a few extra keywords as well:
 
 # Cucumber
 
-Cucumber executes your `.feature` files, and those files contain executable specifications written in a language called Gherkin.
+Cucumber executes the Gherkin files.
 
 It maps each line from the gherkin file to a step written in ruby. This allows us to automate the specification written in gherking language using ruby (or any other language).
 
-
-
-Example of above gherking file implementation with cucumber : 
+Example of above Gherkin step implementation with cucumber : 
 
 ```ruby
 Given(/^I open zinc homepage$/) do
@@ -79,8 +77,8 @@ Then(/^I click on login$/) do
 end
 
 And(/^I enter username and password for admin user$/) do
-  @browser.text_field(:id => 'user_email').set('karthik.cs@gmail.com')
-  @browser.text_field(:id => 'user_password').set('password')
+  @browser.text_field(:id => 'user_email').set('admin@mail.com')
+  @browser.text_field(:id => 'user_password').set('admin-password')
   @browser.button(:text => 'Sign in').click
 end
 
@@ -96,7 +94,7 @@ end
 
 Refer : https://en.wikipedia.org/wiki/Selenium_(software)#Selenium_WebDriver
 
-Selenium WebDriver accepts commands (sent in Selenese, or via a Client API) and sends them to a browser. This is implemented through a browser-specific browser driver, which sends commands to a browser, and retrieves results. Most browser drivers actually launch and access a browser application (such as [Firefox](https://en.wikipedia.org/wiki/Firefox), [Chrome](https://en.wikipedia.org/wiki/Google_Chrome), [Internet Explorer](https://en.wikipedia.org/wiki/Internet_Explorer), or [Microsoft Edge](https://en.wikipedia.org/wiki/Microsoft_Edge))
+Selenium WebDriver accepts commands (via a Client API) and sends them to a browser. This is implemented through a browser-specific browser driver, which sends commands to a browser, and retrieves results. Most browser drivers actually launch and access a browser application (such as [Firefox](https://en.wikipedia.org/wiki/Firefox), [Chrome](https://en.wikipedia.org/wiki/Google_Chrome), [Internet Explorer](https://en.wikipedia.org/wiki/Internet_Explorer), or [Microsoft Edge](https://en.wikipedia.org/wiki/Microsoft_Edge))
 
 
 
