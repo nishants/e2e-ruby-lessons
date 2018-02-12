@@ -19,3 +19,8 @@ And(/^I can open admin section$/) do
   on(HomePage).open_site_admin
   expect(on(SiteAdminPage).opened?).to eq(true)
 end
+
+
+Then(/^I see homepage without admin link in top bar$/) do
+  expect(on(HomePage).site_admin_link_visible?).to eq(false)
+end

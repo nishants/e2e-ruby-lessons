@@ -6,7 +6,7 @@ class HomePage < Page
   end
 
   def site_admin_link_visible?
-    @browser.element(:text => '(Site Admin)').visible?
+    @browser.element(:text => '(Site Admin)').exists?
   end
 
   def open_site_admin

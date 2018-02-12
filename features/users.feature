@@ -13,5 +13,5 @@ Feature: Login as zinc user
   Scenario: Login as zinc student
     Given I open zinc homepage
     Then  I click on login
-    And   I enter username and password for student user
+    And   I enter username and password for "student" user
     Then  I see homepage without admin link in top bar
