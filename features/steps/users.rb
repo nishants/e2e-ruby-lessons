@@ -14,3 +14,8 @@ And(/^I enter username and password for "([^"]*)" user$/) do |user|
   user = @users.get(user)
   on(LoginPage).login_with(user)
 end
+
+And(/^I can open admin section$/) do
+  on(HomePage).open_site_admin
+  expect(on(SiteAdminPage).opened?).to eq(true)
+end

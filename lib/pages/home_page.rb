@@ -8,4 +8,9 @@ class HomePage < Page
   def site_admin_link_visible?
     @browser.element(:text => '(Site Admin)').visible?
   end
+
+  def open_site_admin
+    @browser.element(:text => '(Site Admin)').click
+  end
+
 end
