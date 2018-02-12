@@ -6,7 +6,7 @@
 4. [Watir](#watir)
 5. [Setup](#setup)
 6. [Cheatsheet](#cheatsheet)
-7. Creating simple test
+7. [Creating simple test](https://github.com/nishants/zinc-test-lessons/blob/master/docs/lessons/01-login-page.md#lesson-01--automating-login-page-for-site-admin-user)
 8. Using Page objects
 9. User data with @users
 10. Testing a listing page

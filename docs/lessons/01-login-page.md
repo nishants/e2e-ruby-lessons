@@ -168,3 +168,12 @@ end
 ```
 
 Lets run our test again. We should see following output : 
+
+```bash
+1 scenario (1 passed)
+4 steps (4 passed)
+0m12.782s
+done
+
+```
+
