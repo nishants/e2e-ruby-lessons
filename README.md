@@ -7,7 +7,7 @@
 5. [Setup](#setup)
 6. [Cheatsheet](https://github.com/nishants/zinc-test-lessons/blob/master/docs/cheat-sheet.md#cheatsheet)
 7. [Creating simple test](https://github.com/nishants/zinc-test-lessons/blob/master/docs/lessons/01-login-page.md#lesson-01--automating-login-page-for-site-admin-user)
-8. Using Page objects
+8. [Page Object Pattern](https://github.com/nishants/zinc-test-lessons/blob/master/docs/lessons/02-making-tests-maintainable.md#page-object-pattern)
 9. User data with @users
 10. Testing a listing page
 11. Preparing test data
@@ -129,9 +129,9 @@ rake
 
 
 
-# Using Page objects
+# Page Object Pattern
 
-Making code maintanable by putting all web page related depdentices in page object layer.
+[Learn how to make code maintanable by putting all web page related depdentices in page object layer.](https://github.com/nishants/zinc-test-lessons/blob/master/docs/lessons/02-making-tests-maintainable.md#page-object-pattern)
 
 
 
