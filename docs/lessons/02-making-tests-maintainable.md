@@ -44,7 +44,39 @@ Lets run our tests again to make sure everything works fine.
 
 Now, one by one keep moving all the homepage related logic in Homepage, your lib/pages/home_page.rb should looks something like this : 
 
+```ruby
+class HomePage < Page
+
+  def visit_page
+    @browser.goto("http://staging.zinclearninglabs.com")
+  end
+
+  def click_login
+    @browser.element(:text => 'Login').click
+  end
+
+  def site_admin_link_visible?
+    @browser.element(:text => '(Site Admin)').exists?
+  end
+
+  def open_site_admin
+    @browser.element(:text => '(Site Admin)').click
+  end
+
+end
+```
 
 
 
+And there would be an admin page which may look like :
+
+```ruby
+class SiteAdminPage < Page
+
+  def opened?
+    @browser.element(:class => 'administration_namespace').exists?
+  end
+
+end
+```
 
