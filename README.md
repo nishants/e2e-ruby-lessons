@@ -137,7 +137,7 @@ rake
 
 # User data with @users
 
-A DSL for organizing test data by features.
+[A DSL for organizing test data by features.](https://github.com/nishants/zinc-test-lessons/blob/master/docs/lessons/03-users.md)
 
 
 

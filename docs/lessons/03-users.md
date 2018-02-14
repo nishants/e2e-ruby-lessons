@@ -26,7 +26,7 @@ password = admin["password"]
 
 Its a good practice to also describe a user, so it can be reused in other scenarios so add a line of description as 
 
-```ruby
+```yaml
 my-admin:
  username: karthik.cs@gmail.com
  password: password
