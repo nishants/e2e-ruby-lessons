@@ -68,7 +68,7 @@ end
 
 
 
-And there would be an admin page which may look like :
+And there would be a **SiteAdminPage** page to verify if we have succesfully opened site admin. It may look like :
 
 ```ruby
 class SiteAdminPage < Page
@@ -77,6 +77,43 @@ class SiteAdminPage < Page
     @browser.element(:class => 'administration_namespace').exists?
   end
 
+end
+```
+
+Now, our url may change depending upon the environment we are running tests in. So we will move the URL in config file **config/environments/default.yml** 
+
+```ruby
+urls :
+  default : http://staging.zinclearninglabs.com
+```
+
+We can access this URL it in our Page object like this : 
+
+```ruby
+
+class HomePage < Page
+  page_url base_url
+
+  def click_login
+    @browser.element(:text => 'Login').click
+  end
+
+  def site_admin_link_visible?
+    @browser.element(:text => '(Site Admin)').exists?
+  end
+
+  def open_site_admin
+    @browser.element(:text => '(Site Admin)').click
+  end
+
+end
+```
+
+And use it in the **steps/users.rb** use it as :
+
+```ruby
+Given(/^I open zinc homepage$/) do
+  visit(HomePage)
 end
 ```
 

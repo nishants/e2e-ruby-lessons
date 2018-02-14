@@ -177,3 +177,74 @@ done
 
 ```
 
+Now go ahead and add another trivial test for a student user.
+
+Once you are done,  your Gherkin file may look like this : 
+
+```ruby
+@users @functional
+Feature: Login as zinc user
+
+  @admin
+  Scenario: Login as zinc admin
+    Given I open zinc homepage
+    Then  I click on login
+    And   I enter username and password for admin user
+    Then  I see homepage with site admin link in top bar
+    And   I can open admin section
+
+  @student
+  Scenario: Login as zinc student
+    Given I open zinc homepage
+    Then  I click on login
+    And   I enter username and password for student user
+    Then  I see homepage without admin link in top bar
+```
+
+
+
+And, your **features/steps/users.rb** might look like : 
+
+```ruby
+Given(/^I open zinc homepage$/) do
+  @browser.goto "http://staging.zinclearninglabs.com/"
+end
+
+Then(/^I click on login$/) do
+  @browser.element(:text => 'Login').click
+end
+
+And(/^I enter username and password for admin user$/) do
+  @browser.text_field(:id => 'user_email').set('karthik.cs@gmail.com')
+  @browser.text_field(:id => 'user_password').set('password')
+  @browser.button(:text => 'Sign in').click
+end
+
+Then(/^I see homepage with site admin link in top bar$/) do
+  site_admin_link = @browser.element(:text => '(Site Admin)')
+  expect(site_admin_link.visible?).to eq(true)
+end
+
+And(/^I can open admin section$/) do
+  @browser.element(:text => '(Site Admin)').click
+  @browser.element(:class => 'administration_namespace').visible?
+end
+
+And(/^I enter username and password for student user$/) do
+  @browser.text_field(:id => 'user_email').set('86.rohit+1@gmail.com')
+  @browser.text_field(:id => 'user_password').set('password')
+  @browser.button(:text => 'Sign in').click
+end
+
+Then(/^I see homepage without admin link in top bar$/) do
+  site_admin_link = @browser.element(:text => '(Site Admin)')
+  expect(site_admin_link.exists?).to eq(false)
+end
+```
+
+Run the tests together using command 
+
+```bash
+rake tags=@admin,@student
+```
+
