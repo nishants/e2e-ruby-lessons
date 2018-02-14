@@ -68,7 +68,23 @@ end
 
 
 
-And there would be a **SiteAdminPage** page to verify if we have succesfully opened site admin. It may look like :
+And, a login pages that look like : 
+
+```ruby
+class LoginPage < Page
+
+  def login_with(username, password)
+    @browser.text_field(:id => 'user_email').set(username)
+    @browser.text_field(:id => 'user_password').set(password)
+    @browser.button(:text => 'Sign in').click
+  end
+    
+end
+```
+
+
+
+Also, there would be a **SiteAdminPage** page to verify if we have succesfully opened site admin. It may look like :
 
 ```ruby
 class SiteAdminPage < Page
