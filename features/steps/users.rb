@@ -15,14 +15,6 @@ Then(/^I see homepage with site admin link in top bar$/) do
 	expect(is_site_admin_visible).to eq(true)
 end
 
-Given(/^I open zinc page$/) do
-  on(HomePage).visit_home
-end
-
-Then(/^I click on student login$/) do
-  on(HomePage).open_login
-end
-
 And(/^I enter username and password for student user$/) do
 	on(LoginForm).login("fagun.bhavsar@gmail.com", "Fagun@456")
 end
