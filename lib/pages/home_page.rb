@@ -1,8 +1,5 @@
-class HomePage < Page 
-
-	def visit_home
-		@browser.goto("https://staging.zinclearninglabs.com/")
-	end
+class HomePage < Page
+	page_url	"https://staging.zinclearninglabs.com"
 	
 	def open_login
 		@browser.element(:text => 'Login').click

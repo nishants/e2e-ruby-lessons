@@ -1,5 +1,5 @@
 Given(/^I open zinc homepage$/) do
-  on(HomePage).visit_home
+  visit(HomePage)
 end
 
 Then(/^I click on login$/) do
