@@ -1,4 +1,10 @@
-student:
- username: karthik.cs@gmail.com
- password: password
+fagun-student:
+ username: fagun.bhavsar@gmail.com
+ password: Fagun@456
+ description: a student user with no vocabulary assigned
+
+fagun-site-admin:
+  username: fagun@zinclearninglabs.com
+  password: Fagun@456
+  description: a site admin user
 
