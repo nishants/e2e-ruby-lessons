@@ -9,16 +9,15 @@ class HomePage < Page
 	end
 
 	def site_admin
-		return @browser.element(:text => '(Site Admin)').visible? 
+		@browser.element(:text => '(Site Admin)').exist?
 	end 
 
 	def student_view
-		return @browser.element(:text => 'Classes').present?
+		@browser.element(:text => 'Classes').exist?
 	end
 
-	def student_admin_view
-		return @browser.element(:text => '(Site Admin)').exist?
-	    return @browser.element(:text => 'Admin').exist?
+	def admin_button_visible
+		@browser.element(:text => 'Admin').exist?
 	end
-	    
+
 end

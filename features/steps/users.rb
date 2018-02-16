@@ -33,7 +33,10 @@ Then(/^I see homepage for student user$/) do
 end
 
 And(/^I do not see site admin link and admin button$/) do
-	is_admin_user_visible = on(HomePage).student_admin_view
-	expect(is_admin_user_visible).to eq(false)
+  is_site_admin_link_visible = on(HomePage).site_admin
+  expect(is_site_admin_link_visible).to eq(false)
+
+  is_admin_button_visible = on(HomePage).admin_button_visible
+  expect(is_admin_button_visible).to eq(false)
 end
 
