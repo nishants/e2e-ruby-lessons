@@ -1,5 +1,5 @@
 class HomePage < Page
-	page_url	"https://staging.zinclearninglabs.com"
+	page_url	base_url
 	
 	def open_login
 		@browser.element(:text => 'Login').click

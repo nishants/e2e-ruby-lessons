@@ -1,5 +1,5 @@
 urls :
-  default : http://localhost:3000
+  default : https://staging.zinclearninglabs.com
 
 data :
   default : config/data
