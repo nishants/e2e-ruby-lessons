@@ -17,4 +17,12 @@ class HomePage < Page
 		@browser.element(:text => 'Admin').exist?
 	end
 
+	def classes_tab_visible?
+		@browser.element(:text => 'Classes').exist?
+	end
+
+	def wait_till_logged_in
+		@browser.element(:text => 'Welcome to Zinc Reading Labs').wait_until_present
+	end
+
 end

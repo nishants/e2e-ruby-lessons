@@ -8,3 +8,12 @@ fagun-site-admin:
   password: Fagun@456
   description: a site admin user
 
+fagun-teacher:
+  username: bfagun@yahoo.co.in
+  password: Fagun@456
+  description:  a teacher user
+
+fagun-school-admin:
+  username: fagun+admin@zinclearninglabs.com
+  password: Fagun@456
+  description:  a school admin user
