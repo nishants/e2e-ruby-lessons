@@ -59,3 +59,18 @@ And(/^I should see Schools, Admins, Teachers and Students tab$/)  do
   is_students_tab_visible = on(AdminView).students_tab_visible?
   expect(is_students_tab_visible).to eq(true)
 end
+
+And(/^I see following sections in top bar$/) do |table|
+   #require "pry"; binding.pry;
+   expected = table.raw.map{|val| val[0].downcase}
+   actual = on(HomePage).get_visible_tabs
+   expect(actual).to eq(expected)
+end
+
+And(/^I should see my username with following profile options$/) do |table|
+    actual_username_is = on(HomePage).username_visible?
+    expect(actual_username_is).to eq("fbhavsar")
+    expected = table.raw.map{|val| val[0].downcase}
+    actual = on(HomePage).get_username_profile
+    expect(actual).to eq(expected)
+end

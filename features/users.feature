@@ -7,6 +7,18 @@ Feature: Login as zinc user
     Then  I click on login
     And   I enter username and password for "fagun-site-admin"
     Then  I see homepage with site admin link in top bar
+    Then  I see following sections in top bar
+      | Assignments      |
+      | Articles         |
+      | Vocabulary       |
+      | Skillsnew        |
+      | Reports          |
+      | Admin            |
+    And I should see my username with following profile options
+      | Profile   |
+      | Log       |
+      | Out       |
+
 
   @student
   Scenario: Login as a zinc student
@@ -14,6 +26,12 @@ Feature: Login as zinc user
      Then  I click on login
      And   I enter username and password for "fagun-student"
      And   I do not see site admin link and admin button
+     And   I see following sections in top bar
+      | Articles      |
+      | Vocabulary    |
+      | Skillsnew     |
+      | Reports       |
+      | Classes       |
 
   @schoolAdmin
   Scenario: Login as a school admin
@@ -23,7 +41,13 @@ Feature: Login as zinc user
     And    I do not see site admin link
     And    I see Admin link button
     Given  I click on Admin tab
-    Then   I should see Schools, Admins, Teachers and Students tabs
+    Then   I see following sections in top bar
+      | Assignments      |
+      | Articles         |
+      | Vocabulary       |
+      | Skillsnew        |
+      | Reports          |
+      | Admin            |
 
   @teacher
   Scenario: Login as a school teacher
@@ -33,5 +57,10 @@ Feature: Login as zinc user
     And    I do not see site admin link
     And    I see Admin link button
     Given  I click on Admin tab
-    Then   I should see Classes and Students tabs
-    #And    I should not see Schools, Admins and Teachers tabs
+    Then   I see following sections in top bar
+      | Assignments      |
+      | Articles         |
+      | Vocabulary       |
+      | Skillsnew        |
+      | Reports          |
+      | Admin            |
