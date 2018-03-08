@@ -25,4 +25,9 @@ class HomePage < Page
 		@browser.element(:text => 'Welcome to Zinc Reading Labs').wait_until_present
 	end
 
+	def get_visible_tabs
+		visible = @browser.element(:id => "zinc-nav").wait_until_present
+		visible.text.split.map{|val| val.downcase}
+	end
+
 end
