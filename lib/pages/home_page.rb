@@ -36,7 +36,6 @@ class HomePage < Page
 
   def get_username_profile
     @browser.element(:class => "nickname").click
-		#require "pry"; binding.pry;
 		@browser.element(:class => "dropdown-menu").links.map{|link| link.text.downcase}
   end
 

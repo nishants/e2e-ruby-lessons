@@ -68,7 +68,8 @@ end
 
 And(/^I should see my username with following profile options$/) do |table|
     actual_username_is = on(HomePage).username_visible?
-    expect(actual_username_is).to eq("fbhavsar")
+    expect(actual_username_is).to eq(@data["user_nickname"])
+    #require "pry"; binding.pry;
     expected = table.raw.map{|val| val[0].downcase}
     actual = on(HomePage).get_username_profile
     expect(actual).to eq(expected)

@@ -30,6 +30,10 @@ Feature: Login as zinc user
       | Skillsnew     |
       | Reports       |
       | Classes       |
+     And  I should see my username with following profile options
+      | Profile          |
+      | Log out          |
+
 
   @schoolAdmin
   Scenario: Login as a school admin
@@ -38,7 +42,6 @@ Feature: Login as zinc user
     And    I enter username and password for "fagun-school-admin"
     And    I do not see site admin link
     And    I see Admin link button
-    Given  I click on Admin tab
     Then   I see following sections in top bar
       | Assignments      |
       | Articles         |
@@ -46,6 +49,10 @@ Feature: Login as zinc user
       | Skillsnew        |
       | Reports          |
       | Admin            |
+    And I should see my username with following profile options
+      | Profile          |
+      | Log out          |
+
 
   @teacher
   Scenario: Login as a school teacher
@@ -54,7 +61,6 @@ Feature: Login as zinc user
     And    I enter username and password for "fagun-teacher"
     And    I do not see site admin link
     And    I see Admin link button
-    Given  I click on Admin tab
     Then   I see following sections in top bar
       | Assignments      |
       | Articles         |
@@ -62,3 +68,6 @@ Feature: Login as zinc user
       | Skillsnew        |
       | Reports          |
       | Admin            |
+    Then  I should see my username with following profile options
+      | Profile          |
+      | Log out          |
