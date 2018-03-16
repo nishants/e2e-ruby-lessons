@@ -31,14 +31,13 @@ class HomePage < Page
 	end
 
   def username_visible?
-    username = @browser.element(:class => "nickname").wait_until_present.text
-    #require "pry"; binding.pry;
+    @browser.element(:class => "nickname").wait_until_present.text
   end
 
   def get_username_profile
     @browser.element(:class => "nickname").click
-    #require "pry"; binding.pry;
-		@browser.element(:class => "dropdown-menu").text.split.map{|val| val.downcase}
+		#require "pry"; binding.pry;
+		@browser.element(:class => "dropdown-menu").links.map{|link| link.text.downcase}
   end
 
 end

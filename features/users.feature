@@ -16,9 +16,7 @@ Feature: Login as zinc user
       | Admin            |
     And I should see my username with following profile options
       | Profile   |
-      | Log       |
-      | Out       |
-
+      | Log out   |
 
   @student
   Scenario: Login as a zinc student

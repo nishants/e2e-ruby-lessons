@@ -61,7 +61,6 @@ And(/^I should see Schools, Admins, Teachers and Students tab$/)  do
 end
 
 And(/^I see following sections in top bar$/) do |table|
-   #require "pry"; binding.pry;
    expected = table.raw.map{|val| val[0].downcase}
    actual = on(HomePage).get_visible_tabs
    expect(actual).to eq(expected)
